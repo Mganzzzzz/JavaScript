@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = utf-8>
+    <title>HTML5-canvas</title>
+</head>
+<body>
+    <canvas id = "ldsun" width = "500" height = "200" ></canvas>
+	 <video src='蛇蛇争霸.mid' autoplay="autoplay">
+	 Your browser does not support the audio element.
+	 </video>
+    <div id = "ds"></div>
+    <div class=" ">
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+    </div>
+
+    <input onclick = "interval = setInterval(draw,5);" value = "开始" type = "button" />
+    <input onclick = "clearInterval(interval);" value = "停止" type = "button" />
+    <script type="text/javascript">
+        var removeAttr = function(dom, attr) {
+        $(dom).children().each(function(){
+           this.removeAttribute(attr)
+           removeAttr(this)
+        })
+        }
+    </script>
+    </body>
+
+</html>

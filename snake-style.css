@@ -1,0 +1,34 @@
+/*button {
+    position: relative;
+    left: -333px;
+    top: -227px
+}*/
+audio {
+    display: none;
+    
+}
+.interface {
+    width: 800px;
+    margin: 0px auto;
+}
+
+#reset {
+    position: relative;
+    left: -333px;
+    top: -227px
+}
+
+
+#init  {
+    width: 270px;
+    height: 277px;
+    position: relative;
+    left: -408px;
+    top: -124px
+}
+
+#start {
+    position: relative;
+    left: 355px;
+    top: -228px
+}
