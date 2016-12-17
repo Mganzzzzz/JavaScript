@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>贪吃蛇</title>
+        <link rel="stylesheet" href="snake-style.css">
+    </head>
+    <body>
+        <div class="interface">
+            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;">
+            Your browser does not support the canvas element.
+            </canvas>
+        </div>
 
-You can use the [editor on GitHub](https://github.com/Mganzzzzz/JavaScript/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+        <audio controls preload="auto" id="mouseClick">
+        	<source src="click.wav" controls></source>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        	Your browser isn't invited for super fun audio time.
+        </audio>
 
-### Markdown
+        <audio controls preload="auto" id="endGame">
+        	<source src="end.wav" controls></source>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        	Your browser isn't invited for super fun audio time.
+        </audio>
 
-```markdown
-Syntax highlighted code block
+        <audio controls preload="auto" id="background" display=''>
+        	<source src="background.mp3" autoplay></source>
 
-# Header 1
-## Header 2
-### Header 3
+        	Your browser isn't invited for super fun audio time.
+        </audio>
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Mganzzzzz/JavaScript/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+        <script src=snake.js></script>
+    </body>
+</html>
