@@ -138,7 +138,7 @@ var isHitself = function(snake) {
 //投食
 var createFood = function(snake) {
     var max = 2500
-    log(snake)
+    // log(snake)
     // var snakeContainer = []
     var foodBlock = randomBlock()
     // log('first foodBlock', foodBlock)
@@ -178,15 +178,16 @@ var calculateNextSnake = function(snake) {
     //是否吃到食物
     // log('putFood', putFood)
     if(snake[len - 1] == putFood) {
-        log('吃到食物')
+        // log('吃到食物')
+        document.querySelector('#eat').play()
         var addTail = snake[0] - direction
         var tempSnake = []
         tempSnake.push(addTail)
         for(var s = 0; s < snake.length; s++) {
             tempSnake.push(snake[s])
         }
-        log('tempSnake')
-        log('clonedsnake', clonedsnake)
+        // log('tempSnake')
+        // log('clonedsnake', clonedsnake)
         clonedsnake = tempSnake
         putFood = createFood(snake)
 
@@ -208,6 +209,7 @@ var calculateNextSnake = function(snake) {
         printSentences(1068, 'Game Over')
         //插入重来按钮
         insertButton('重玩', 'reset')
+        document.querySelector('#endGame').play()
         clickSound('reset','mouseClick')
         document.querySelector('#reset').addEventListener('click', function() {
             document.querySelector('#reset').remove()
@@ -308,7 +310,7 @@ var moveSnake = function(snake) {
     // log('clonedsnake', clonedsnake)
     clonedsnake = snake.slice(0)
     // log('clonedsnake1', clonedsnake)
-    log('clonedsnake', clonedsnake)
+    // log('clonedsnake', clonedsnake)
     var mainSnake = setInterval(function() {
         calculateNextSnake(clonedsnake)
     }, 100  )
@@ -340,30 +342,30 @@ window.document.onkeydown =  function(evt) {
 }
 
 //初始化
-var initGame = function() {
-    //载入图片
-    var url = 'init.png'
-    var id = 'init'
-    insertImg(url, id)
-    //载入音乐
-    insertMusic()
-    //载入按钮
-    insertButton('开始', 'start')
-    clickSound('start','mouseClick')
-    //按下按钮开始游戏移除图片和按钮
-    var snakeSwitch
-    document.querySelector('#start').addEventListener('click', function() {
-        document.querySelector('#init').remove()
-        document.querySelector('#start').remove()
+
+//载入图片
+var url = 'init.png'
+var id = 'init'
+insertImg(url, id)
+//载入音乐
+insertMusic()
+//载入按钮
+insertButton('开始', 'start')
+clickSound('start','mouseClick')
+//按下按钮开始游戏移除图片和按钮
+var snakeSwitch
+var testsnake2 = [1, 2, 3, 4]
+document.querySelector('#start').addEventListener('click', function() {
+    document.querySelector('#init').remove()
+    document.querySelector('#start').remove()
+    putFood = createFood(testsnake2)
+
+    snakeSwitch = moveSnake(testsnake2)
+
+})
 
 
-    })
 
-    mainPower = 1
-}
-initGame()
+// initGame()
 var direction = 1
 var testsnake2 = [1, 2, 3, 4]
-var putFood = createFood(testsnake2)
-
-var snakeSwitch = moveSnake(testsnake2)
